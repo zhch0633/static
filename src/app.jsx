@@ -1,21 +1,22 @@
 import styles from './index.scss';
 import React from 'react';
+import MobileHome from './component/mobileHome.jsx';
 var Markdown = require('react-remarkable');
-import { DatePicker } from 'antd';
+import { NavBar, Icon } from 'antd-mobile';
 
 export default class App extends React.Component {
-  render() {
-		var text = '## dasd ' +
-			'\n **markdown**';
+
+	constructor() {
+		super();
+		this.state = {
+			val: 0,
+		};
+	}
+
+  render(){
     return (
       <div>
-        <h1>It Works!</h1>
-        <p>This React project just works including <span className={styles.redBg}>module</span> local styles.</p>
-        <p>Enjoy!</p>
-				<Markdown source="**Markdown is awesome!**" />
-				<Markdown source={text}>
-				</Markdown>
-				<DatePicker></DatePicker>
+				<MobileHome/>
       </div>
     )
   }
